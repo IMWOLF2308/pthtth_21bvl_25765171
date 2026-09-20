@@ -1,0 +1,6 @@
+BÁO CÁO TỔNG HỢP TỒN KHO
+==========================
+Tổng số sản phẩm hợp lệ: 13
+Tổng giá trị tồn kho: 67,030,000 VND
+Sản phẩm có giá trị tồn kho cao nhất:
+- Mã: 004   | Tên: Man hinh Dell 24 inch | Giá: 3,500,000 | SL: 7   | Giá trị tồn: 24,500,000

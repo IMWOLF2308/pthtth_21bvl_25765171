@@ -1,0 +1,42 @@
+package lab3;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+
+public class bai6 {
+    public static void main(String[] args) {
+        Path file = Path.of("data", "ghi_chu.txt");
+        System.out.println(file.toAbsolutePath());
+
+        try {
+            Files.createDirectories(file.getParent());
+            try (BufferedWriter writer = Files.newBufferedWriter(
+                    file, 
+                    StandardCharsets.UTF_8, 
+                    StandardOpenOption.CREATE, 
+                    StandardOpenOption.APPEND)) {
+                writer.write("Xin chào.");
+                writer.newLine();
+                writer.write("Mình là Cường.");
+                writer.newLine();
+                writer.write("MSSV của mình là 25765171.");
+                writer.newLine();
+            }
+            try (BufferedReader reader = Files.newBufferedReader(
+                    file, StandardCharsets.UTF_8)) {
+                String line;
+                int number = 1;
+                while ((line = reader.readLine()) != null) {
+                    System.out.printf("%d. %s%n", number++, line);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Lỗi xử lý tệp " + file + ": " + e.getMessage());
+        }
+    }
+}
